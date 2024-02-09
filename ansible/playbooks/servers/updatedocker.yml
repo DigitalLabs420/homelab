@@ -1,0 +1,22 @@
+---
+- name: Update Docker containers
+  hosts: your_target_hosts
+  become: yes
+  tasks:
+    - name: Pull latest Docker images
+      docker_image:
+        name: "{{ item }}"
+        state: latest
+      with_items:
+        - container1_image
+        - container2_image
+        # Add more container images as needed
+
+    - name: Restart Docker containers
+      docker_container:
+        name: "{{ item }}"
+        state: restarted
+      with_items:
+        - container1_name
+        - container2_name
+        # Add more container names as needed
