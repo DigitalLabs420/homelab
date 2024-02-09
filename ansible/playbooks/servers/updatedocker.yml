@@ -1,8 +1,9 @@
-- name: Update Docker containers
+- name: Pull latest Docker containers
   hosts: 192.168.21.11
-  become: yes
   tasks:
-    - name: Pull latest Docker images
+    - name: Pull latest Docker image
       docker_image:
-        name: "binhex/arch-qbittorrentvpn"
-        state: latest
+        name: binhex/arch-qbittorrentvpn
+        source: pull
+        state: present
+        force_source: yes
