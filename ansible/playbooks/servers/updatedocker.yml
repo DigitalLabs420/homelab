@@ -6,5 +6,3 @@
       docker_image:
         name: "binhex/arch-qbittorrentvpn"
         state: latest
-      with_items:
-        - binhex/arch-qbittorrentvpn
