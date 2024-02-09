@@ -9,7 +9,7 @@
         force_source: yes
     - name: Restart Docker container
       docker_container:
-        name: binhex/arch-qbittorrentvpn
+        name: qbittorrentvpn
         state: started
         restart: yes
         image: binhex/arch-qbittorrentvpn     
