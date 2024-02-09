@@ -4,24 +4,7 @@
   tasks:
     - name: Pull latest Docker images
       docker_image:
-        name: "{{ item }}"
+        name: "binhex/arch-qbittorrentvpn"
         state: latest
       with_items:
         - binhex/arch-qbittorrentvpn
-        - cr.hotio.dev/hotio/bazarr:latest
-        - lscr.io/linuxserver/prowlarr:latest
-        - cr.hotio.dev/hotio/radarr:latest
-        - cr.hotio.dev/hotio/sonarr:latest
-        # Add more container images as needed
-
-    - name: Restart Docker containers
-      docker_container:
-        name: "{{ item }}"
-        state: restarted
-      with_items:
-        - binhex/arch-qbittorrentvpn
-        - cr.hotio.dev/hotio/bazarr:latest
-        - lscr.io/linuxserver/prowlarr:latest
-        - cr.hotio.dev/hotio/radarr:latest
-        - cr.hotio.dev/hotio/sonarr:latest
-        # Add more container names as needed
