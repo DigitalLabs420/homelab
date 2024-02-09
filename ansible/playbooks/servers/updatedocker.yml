@@ -1,6 +1,5 @@
----
 - name: Update Docker containers
-  hosts: your_target_hosts
+  hosts: 192.168.21.11
   become: yes
   tasks:
     - name: Pull latest Docker images
@@ -8,8 +7,11 @@
         name: "{{ item }}"
         state: latest
       with_items:
-        - container1_image
-        - container2_image
+        - binhex/arch-qbittorrentvpn
+        - cr.hotio.dev/hotio/bazarr:latest
+        - lscr.io/linuxserver/prowlarr:latest
+        - cr.hotio.dev/hotio/radarr:latest
+        - cr.hotio.dev/hotio/sonarr:latest
         # Add more container images as needed
 
     - name: Restart Docker containers
@@ -17,6 +19,9 @@
         name: "{{ item }}"
         state: restarted
       with_items:
-        - container1_name
-        - container2_name
+        - binhex/arch-qbittorrentvpn
+        - cr.hotio.dev/hotio/bazarr:latest
+        - lscr.io/linuxserver/prowlarr:latest
+        - cr.hotio.dev/hotio/radarr:latest
+        - cr.hotio.dev/hotio/sonarr:latest
         # Add more container names as needed
