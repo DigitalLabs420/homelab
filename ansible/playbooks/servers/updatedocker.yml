@@ -7,7 +7,7 @@
         source: pull
         state: present
         force_source: yes
- - name: Restart Docker container
+    - name: Restart Docker container
       docker_container:
         name: binhex/arch-qbittorrentvpn
         state: started
